@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package counter;
+
+option go_package = "services/counter;counter";
+
+message Empty {};
+
+message Response {
+    uint32 count = 1;
+}
+
+service CounterService {
+    rpc UpdateCount(Empty) returns (Response);
+}
